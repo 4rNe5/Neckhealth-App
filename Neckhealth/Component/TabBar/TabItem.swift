@@ -1,3 +1,11 @@
+//
+//  TabItem.swift
+//  Neckhealth
+//
+//  Created by 4rNe5 on 11/23/24.
+//
+import SwiftUI
+
 struct TabItem: View {
     let systemName: String
     let title: String

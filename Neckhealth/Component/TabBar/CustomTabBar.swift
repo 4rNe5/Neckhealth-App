@@ -1,3 +1,11 @@
+//
+//  CustomTabBar.swift
+//  Neckhealth
+//
+//  Created by 4rNe5 on 11/23/24.
+//
+import SwiftUI
+
 struct CustomTabBar: View {
     @Binding var selectedTab: Tab
     @Namespace private var namespace
@@ -12,8 +20,14 @@ struct CustomTabBar: View {
                     namespace: namespace
                 )
                 .onTapGesture {
+                    print("Before: \(selectedTab), Tap: \(tab)")
+                    guard selectedTab != tab else {
+                        print("Duplicate tap on \(tab.rawValue)")
+                        return
+                    }
                     withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
                         selectedTab = tab
+                        print("After: \(selectedTab)")
                     }
                 }
             }

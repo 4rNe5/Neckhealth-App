@@ -14,7 +14,7 @@ enum Tab: String, CaseIterable {
     
     var systemImage: String {
         switch self {
-        case .turtleNeck: return "figure.walk.motion"
+        case .turtleNeck: return "figure.seated.side.right.air.distribution.middle"
         case .stress: return "heart.text.square"
         case .settings: return "gear"
         }

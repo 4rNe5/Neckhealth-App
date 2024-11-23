@@ -15,33 +15,12 @@ struct ContentView: View {
                 SettingsView()
                     .tag(Tab.settings)
             }
+            .animation(nil, value: selectedTab)
             
             CustomTabBar(selectedTab: $selectedTab)
                 .padding(.bottom, 20)
         }
         .ignoresSafeArea(edges: .bottom)
-    }
-}
-
-// 예시 뷰들
-struct TurtleNeckView: View {
-    var body: some View {
-        Color.blue.opacity(0.1)
-            .overlay(Text("거북목 감지"))
-    }
-}
-
-struct StressView: View {
-    var body: some View {
-        Color.green.opacity(0.1)
-            .overlay(Text("스트레스 측정"))
-    }
-}
-
-struct SettingsView: View {
-    var body: some View {
-        Color.orange.opacity(0.1)
-            .overlay(Text("설정"))
     }
 }
 
