@@ -102,9 +102,9 @@ class SleepPostureManager: ObservableObject {
             if abs(pitch) < 0.3 && abs(roll) < 0.3 {
                 return .supine
             } else if roll > 1.0 {
-                return .leftSide
-            } else if roll < -1.0 {
                 return .rightSide
+            } else if roll < -1.0 {
+                return .leftSide
             } else if abs(pitch) > 1.3 {
                 return .prone
             }
@@ -178,14 +178,6 @@ class SleepPostureManager: ObservableObject {
         
         return recommendations
     }
-}
-
-// 수면 리포트 구조체
-struct SleepReport {
-    let date: Date
-    let totalSleepDuration: TimeInterval
-    let posturePercentages: [SleepPostureManager.SleepPosture: Double]
-    let recommendations: [String]
 }
 
 // 알림 매니저

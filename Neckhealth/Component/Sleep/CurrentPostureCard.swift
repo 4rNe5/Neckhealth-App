@@ -5,24 +5,31 @@
 //  Created by 4rNe5 on 11/23/24.
 //
 import SwiftUI
+import RiveRuntime
 
 struct CurrentPostureCard: View {
     @ObservedObject var postureManager: SleepPostureManager
     
     var body: some View {
         VStack(spacing: 12) {
-            Text("현재 수면 자세")
-                .font(.headline)
+                Text("현재 수면 자세는?")
+                    .font(.system(size: 20))
+                    .fontWeight(.light)
+                    .padding(.top, 15)
+            
+            RiveViewRepresentable(viewModel: RiveViewModel(fileName: "sleeping_green", artboardName: "Artboard"))
+                .frame(height: 160) // 높이 제한
             
             Text(postureManager.currentPosture.description)
-                .font(.title2)
+                .font(.system(size: 23))
                 .fontWeight(.bold)
             
             Text(postureManager.currentPosture.recommendation)
                 .font(.subheadline)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.secondary)
-                .padding(.horizontal)
+                .padding(.horizontal, 2)
+                .padding(.bottom, 13)
         }
         .padding()
         .background(Color(.systemBackground))

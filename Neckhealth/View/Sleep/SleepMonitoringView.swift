@@ -19,6 +19,7 @@ struct SleepMonitoringView: View {
                 
                 // 모니터링 컨트롤
                 MonitoringControlPanel(postureManager: postureManager)
+                    .padding(.top, 10)
                 
                 if !postureManager.postureHistory.isEmpty {
                     // 자세 히스토리
@@ -39,7 +40,6 @@ struct SleepMonitoringView: View {
                 
                 Spacer()
             }
-            .navigationTitle("수면 자세 모니터링")
             .padding()
         }
     }

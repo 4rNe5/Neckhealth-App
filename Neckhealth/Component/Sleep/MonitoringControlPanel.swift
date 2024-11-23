@@ -25,8 +25,8 @@ struct MonitoringControlPanel: View {
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)
             .padding()
-            .background(postureManager.isMonitoring ? Color.red : Color.green)
-            .cornerRadius(10)
+            .background(postureManager.isMonitoring ? Color.red : Color("AccentColor"))
+            .cornerRadius(20)
         }
         .padding(.horizontal)
     }
