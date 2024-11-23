@@ -10,10 +10,10 @@ struct RootView: View {
                     .tag(Tab.turtleNeck)
                 
                 SleepMonitoringView()
-                    .tag(Tab.stress)
+                    .tag(Tab.sleep)
                 
-                SettingsView()
-                    .tag(Tab.settings)
+                StressView()
+                    .tag(Tab.stress)
             }
             .animation(nil, value: selectedTab)
             

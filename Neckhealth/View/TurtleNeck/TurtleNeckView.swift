@@ -46,7 +46,7 @@ struct TurtleNeckView: View {
                 
                 Circle()
                     .fill(Color.green)
-                    .frame(width: 25, height: 25)
+                    .frame(width: 30, height: 30)
                     .offset(
                         x: 0,
                         y: CGFloat(min(max((motionManager.pitch - motionManager.baselinePitch) * -200, -100), 100))

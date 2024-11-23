@@ -9,6 +9,7 @@ import SwiftUI
 struct CustomTabBar: View {
     @Binding var selectedTab: Tab
     @Namespace private var namespace
+    private let HapticFeedback = UIImpactFeedbackGenerator(style: .medium)
     
     var body: some View {
         HStack(spacing: 0) {
@@ -20,14 +21,12 @@ struct CustomTabBar: View {
                     namespace: namespace
                 )
                 .onTapGesture {
-                    print("Before: \(selectedTab), Tap: \(tab)")
+                    setHapticIntensity(.heavy)
                     guard selectedTab != tab else {
-                        print("Duplicate tap on \(tab.rawValue)")
                         return
                     }
                     withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
                         selectedTab = tab
-                        print("After: \(selectedTab)")
                     }
                 }
             }
@@ -40,4 +39,9 @@ struct CustomTabBar: View {
         )
         .padding(.horizontal)
     }
+    
+    func setHapticIntensity(_ style: UIImpactFeedbackGenerator.FeedbackStyle) {
+            HapticFeedback.impactOccurred(intensity: style == .light ? 0.3 : style == .medium ? 0.6 : 1.0)
+    }
+    
 }

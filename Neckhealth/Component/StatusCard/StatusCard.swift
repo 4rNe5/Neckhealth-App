@@ -37,7 +37,7 @@ struct StatusCard: View {
         .background(
             RoundedRectangle(cornerRadius: 12)
                 .fill(Color.white)
-                .shadow(color: Color.black.opacity(0.075), radius: 5, x: 0, y: 3)
+                .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 3)
         )
     }
 }

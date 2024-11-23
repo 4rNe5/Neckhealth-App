@@ -6,7 +6,7 @@ class HeadphoneMotionManager: ObservableObject {
     @Published var pitch: Double = 0.0
     @Published var roll: Double = 0.0
     @Published var isAvailable: Bool = false
-    @Published var baselinePitch: Double = 0.0 // 영점 보정을 위한 속성
+    @Published var baselinePitch: Double = 0.0 // 영점 보정용
     
     init() {
         checkAvailability()
