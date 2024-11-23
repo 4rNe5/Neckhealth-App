@@ -21,7 +21,7 @@ struct CurrentPostureCard: View {
                 .frame(height: 160) // 높이 제한
             
             Text(postureManager.currentPosture.description)
-                .font(.system(size: 23))
+                .font(.system(size: 28))
                 .fontWeight(.bold)
             
             Text(postureManager.currentPosture.recommendation)

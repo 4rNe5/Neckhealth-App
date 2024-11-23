@@ -11,4 +11,5 @@ struct SleepReport {
     let totalSleepDuration: TimeInterval
     let posturePercentages: [SleepPostureManager.SleepPosture: Double]
     let recommendations: [String]
+    let sleepQuality: String
 }
