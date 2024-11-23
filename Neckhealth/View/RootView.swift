@@ -6,6 +6,7 @@ struct RootView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             TabView(selection: $selectedTab) {
+                
                 TurtleNeckView()
                     .tag(Tab.turtleNeck)
                 
@@ -14,6 +15,10 @@ struct RootView: View {
                 
                 StressView()
                     .tag(Tab.stress)
+                
+                AirpodsTimeView()
+                    .tag(Tab.airpodstime)
+                
             }
             .animation(nil, value: selectedTab)
             

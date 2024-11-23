@@ -10,13 +10,15 @@
 enum Tab: String, CaseIterable {
     case turtleNeck = "거북목 감지"
     case sleep = "수면 분석"
-    case stress = "스트레스 측정"
+    case stress = "스트레스"
+    case airpodstime = "착용 시간"
     
     var systemImage: String {
         switch self {
-        case .turtleNeck: return "figure.seated.side.right.air.distribution.middle"
-        case .stress: return "heart.text.square"
-        case .sleep: return "moon.zzz"
+            case .turtleNeck: return "figure.seated.side.right.air.distribution.middle"
+            case .stress: return "heart.text.square"
+            case .sleep: return "moon.zzz"
+            case .airpodstime: return "airpods.pro"
         }
     }
 }
