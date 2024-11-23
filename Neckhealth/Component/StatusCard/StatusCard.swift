@@ -18,22 +18,26 @@ struct StatusCard: View {
                     .foregroundColor(type.color)
                     .frame(width: 30, height: 30)
                 Text(type.title)
-                    .fontWeight(.semibold)
+                    .fontWeight(.bold)
+                    .font(.system(size: 20))
                 Spacer()
             }
+            .padding(.bottom, 8)
             
             Text(message)
-                .font(.subheadline)
+                .font(.system(size: 18))
+                .fontWeight(.semibold)
+                .padding(.bottom, 7)
             
             Text(subMessage)
-                .font(.caption)
                 .foregroundColor(.gray)
+                .font(.system(size: 14))
         }
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 12)
                 .fill(Color.white)
-                .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 2)
+                .shadow(color: Color.black.opacity(0.075), radius: 5, x: 0, y: 3)
         )
     }
 }

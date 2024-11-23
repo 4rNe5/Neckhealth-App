@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
+struct RootView: View {
     @State private var selectedTab: Tab = .turtleNeck
     
     var body: some View {
@@ -9,7 +9,7 @@ struct ContentView: View {
                 TurtleNeckView()
                     .tag(Tab.turtleNeck)
                 
-                StressView()
+                SleepMonitoringView()
                     .tag(Tab.stress)
                 
                 SettingsView()
@@ -26,6 +26,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RootView()
     }
 }
