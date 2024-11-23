@@ -48,7 +48,7 @@ struct TurtleNeckView: View {
                     .fill(Color.green)
                     .frame(width: 30, height: 30)
                     .offset(
-                        x: 0,
+                        x: CGFloat(min(max(motionManager.roll * 200, -100), 100)),
                         y: CGFloat(min(max((motionManager.pitch - motionManager.baselinePitch) * -200, -100), 100))
                     )
                     .animation(.easeOut(duration: 0.2), value: motionManager.pitch)
